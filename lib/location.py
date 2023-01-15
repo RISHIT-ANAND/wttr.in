@@ -261,7 +261,7 @@ def _get_location(ip_addr):
         _ipcachewrite(ip_addr, location)
         # cache write used to happen before workaround, preserve that
         location[2] = _country_name_workaround(location[2])
-        return location[:3]  # city, region, country
+        return location[2:3]  # city, region, country
         # ccode is cached but not needed for location
 
     # temporary disabled it because of geoip services capcacity
